@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Resize</title>
+</head>
+<body>
+    <button onclick="showWindowSize()">Hiển thị kích thước cửa sổ</button>
+
+    <script>
+        function showWindowSize() {
+            // Lấy chiều rộng và chiều cao của cửa sổ
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            // Hiển thị chiều rộng và chiều cao
+            alert('Chiều rộng: ' + windowWidth + 'px\nChiều cao: ' + windowHeight + 'px');
+        }
+    </script>
+</body>
+</html>

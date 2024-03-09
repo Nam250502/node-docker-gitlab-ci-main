@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Display Text from API</title>
+</head>
+<body>
+
+    <button onclick="fetchHipsterText(3)">Get Hipster Text</button>
+    <div id="ajax"></div>
+
+    <script>
+       function fetchHipsterText(paras) {
+    var apiUrl = 'http://hipsum.co/api/?type=hipster-centric&sentences='+ paras;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', apiUrl, true);
+
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var responseData = JSON.parse(xhr.responseText);
+
+          
+            if (Array.isArray(responseData) && responseData.length > 0) {
+                var hipsterText = responseData[0];
+                document.getElementById('ajax').innerText = hipsterText;
+            } else {
+                console.error('Dữ liệu không hợp lệ hoặc mảng rỗng');
+            }
+        } else {
+            console.error('Lỗi khi gọi API:', xhr.status);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error('Lỗi kết nối đến API');
+    };
+
+    xhr.send();
+}
+
+    </script>
+
+</body>
+</html>

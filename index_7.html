@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Create Table</title>
+    <style type="text/css">
+      body {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="myTable" border="1"></table>
+
+    <form>
+      <input
+        type="button"
+        onclick="createTable(3, 5)"
+        value="Create the table"
+      />
+    </form>
+
+    <script>
+      function createTable(rows, columns) {
+        // Lấy thẻ table
+        var table = document.getElementById("myTable");
+
+        // Xóa nội dung cũ của bảng (nếu có)
+        table.innerHTML = "";
+
+        // Tạo các dòng và ô trong bảng
+        for (var i = 0; i < rows; i++) {
+          var row = table.insertRow(i);
+          for (var j = 0; j < columns; j++) {
+            var cell = row.insertCell(j);
+            cell.textContent = "Row " + (i + 1) + " Cell " + (j + 1);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

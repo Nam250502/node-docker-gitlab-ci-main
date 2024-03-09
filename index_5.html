@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Row</title>
+</head>
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table><br>
+    <input type="button" onclick="insert_Row()" value="Insert row">  
+
+    <script>
+        function insert_Row() {
+            // Lấy thẻ table theo id
+            var table = document.getElementById('sampleTable');
+
+            // Thêm một dòng mới vào cuối bảng
+            var newRow = table.insertRow(-1);
+
+            // Thêm các ô (cell) vào dòng mới
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+
+            // Thiết lập nội dung cho các ô
+            cell1.innerHTML = 'New Row cell1';
+            cell2.innerHTML = 'New Row cell2';
+        }
+    </script>
+</body>
+</html>

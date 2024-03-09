@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+    <p>
+        <a id="somelink" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.google.com/">Google Website</a>
+    </p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+
+    <script>
+        function getAttributes() {
+            // Lấy thẻ a theo id
+            var link = document.getElementById('somelink');
+
+            // Kiểm tra nếu thẻ a tồn tại
+            if (link) {
+                // Lấy giá trị của các thuộc tính
+                var hrefValue = link.getAttribute('href');
+                var hreflangValue = link.getAttribute('hreflang');
+                var relValue = link.getAttribute('rel');
+                var targetValue = link.getAttribute('target');
+
+                // Hiển thị giá trị
+                alert('href: ' + hrefValue + '\nhreflang: ' + hreflangValue + '\nrel: ' + relValue + '\ntarget: ' + targetValue);
+            } else {
+                // Thông báo nếu không tìm thấy thẻ a
+                alert('Không tìm thấy thẻ a với id "somelink"');
+            }
+        }
+    </script>
+</body>
+</html>
